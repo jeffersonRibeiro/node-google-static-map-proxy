@@ -14,14 +14,15 @@ module.exports = {
   },
   download: (uri, callback) => {
     const filename = `${uuid.v4()}-map.png`;
+    const filepath = path.join(__dirname, filename);
     request.head(uri, (err, res, body) => {
       request(uri)
-        .pipe(fs.createWriteStream(filename))
-        .on('close', callback(path.join(__dirname, filename)));
+        .pipe(fs.createWriteStream(filepath))
+        .on('close', callback(filepath));
     });
   },
-  deleteFile: filename => {
-    fs.unlink(filename, err => {
+  deleteFile: filepath => {
+    fs.unlink(filepath, err => {
       if (err) {
         console.log(err);
       }

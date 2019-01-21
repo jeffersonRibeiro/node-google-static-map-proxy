@@ -7,7 +7,7 @@ const app = express();
 
 app.use(ignoreFavicon);
 
-app.use('/:cep', (req, res) => {
+app.get('/:cep', (req, res) => {
   const cep = req.params.cep;
   download(staticMap(cep), filepath => () => {
     res.sendFile(filepath);
@@ -21,4 +21,8 @@ app.use('/:cep', (req, res) => {
   });
 });
 
-app.listen('8000', () => console.log('app listening'));
+const port = process.env.PORT || 8000;
+
+app.listen(port, () =>
+  console.log(`App is listening on http://localhost:${port}`)
+);
