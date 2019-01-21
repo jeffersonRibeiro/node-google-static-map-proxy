@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyCW3d9QMkhbwAcXa6mHj-Y-TnsMjcfW6uk';
+const API_KEY = 'AIzaSyBxyiiVsnmLTpFYat4LIfaxKiRIecbYRvI';
 
 module.exports = {
   staticMap: zipCode =>
