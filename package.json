@@ -12,7 +12,8 @@
   },
   "scripts": {
     "start": "nodemon ./app/index.js",
-    "start:prd": "node ./app/index.js"
+    "start:prd": "node ./app/index.js",
+    "deploy": "git push heroku master"
   },
   "author": "",
   "license": "ISC"
