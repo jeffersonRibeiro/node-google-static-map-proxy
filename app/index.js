@@ -1,11 +1,9 @@
 const express = require('express');
 
 const { staticMap } = require('./static-map-api');
-const { download, ignoreFavicon, deleteFile } = require('./util');
+const { download, deleteFile } = require('./util');
 
 const app = express();
-
-app.use(ignoreFavicon);
 
 app.get('/:cep', (req, res) => {
   const cep = req.params.cep;
