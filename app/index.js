@@ -7,16 +7,18 @@ const app = express();
 
 app.get('/:cep', (req, res) => {
   const cep = req.params.cep;
-  download(staticMap(cep), filepath => () => {
-    res.sendFile(filepath);
-    res.on('finish', function() {
-      try {
-        deleteFile(filepath);
-      } catch (err) {
-        console.log(err, filepath);
-      }
-    });
-  });
+  console.log(cep);
+  res.send(cep);
+  // download(staticMap(cep), filepath => () => {
+  //   res.sendFile(filepath);
+  //   res.on('finish', function() {
+  //     try {
+  //       deleteFile(filepath);
+  //     } catch (err) {
+  //       console.log(err, filepath);
+  //     }
+  //   });
+  // });
 });
 
 const port = process.env.PORT || 8000;
