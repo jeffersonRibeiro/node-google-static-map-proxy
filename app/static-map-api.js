@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyBxyiiVsnmLTpFYat4LIfaxKiRIecbYRvI';
+const API_KEY = process.env.GOOGLE_STATIC_MAP_API;
 
 module.exports = {
   staticMap: zipCode =>
